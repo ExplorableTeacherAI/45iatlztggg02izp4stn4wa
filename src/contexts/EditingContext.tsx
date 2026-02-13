@@ -470,8 +470,9 @@ export const EditingProvider = ({ children }: EditingProviderProps) => {
         saveScrubbleNumberEdit,
     ]);
 
-    // Check if running standalone (not in iframe)
+    // Check if running standalone (not in iframe) and not in preview mode
     const isStandalone = typeof window !== 'undefined' && window.self === window.top;
+    const { isPreview } = useAppMode();
 
     // State for debug panel visibility
     const [showDebugPanel, setShowDebugPanel] = useState(false);
@@ -480,8 +481,8 @@ export const EditingProvider = ({ children }: EditingProviderProps) => {
         <EditingContext.Provider value={value}>
             {children}
 
-            {/* Debug panel for standalone testing */}
-            {isStandalone && (
+            {/* Debug panel for standalone testing - hidden in preview mode */}
+            {isStandalone && !isPreview && (
                 <>
                     {/* Debug toggle button */}
                     <button
