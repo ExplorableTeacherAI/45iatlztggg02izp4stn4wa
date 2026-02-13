@@ -151,19 +151,19 @@ const ObservationSequence = ({
       </div>
 
       {/* Step-by-step update visualization */}
-      <div className="flex items-center gap-1 overflow-x-auto pb-2">
+      <div className="flex items-center gap-1 py-2 px-1">
         {steps.slice(0, highlightStep + 1).map((step, i) => (
-          <div key={i} className="flex items-center gap-1">
-            <div className={`text-center px-2 py-1.5 rounded min-w-[60px] ${i === highlightStep ? 'bg-primary/10 ring-2 ring-primary' : 'bg-muted/50'}`}>
-              <div className="text-[10px] text-muted-foreground mb-0.5 whitespace-nowrap">
+          <div key={i} className="flex items-center gap-0.5">
+            <div className={`text-center px-1.5 py-1 rounded min-w-[50px] ${i === highlightStep ? 'bg-primary/10 ring-1 ring-primary' : 'bg-muted/50'}`}>
+              <div className="text-[9px] text-muted-foreground leading-tight whitespace-nowrap">
                 {i === 0 ? 'Prior' : `Step ${i}`}
               </div>
-              <div className="font-mono text-xs font-medium whitespace-nowrap" style={{ color }}>
+              <div className="font-mono text-[10px] font-medium whitespace-nowrap" style={{ color }}>
                 β({step.alpha},{step.beta})
               </div>
             </div>
             {i < Math.min(highlightStep, steps.length - 1) && (
-              <ArrowRight className="h-3 w-3 text-muted-foreground flex-shrink-0" />
+              <ArrowRight className="h-2.5 w-2.5 text-muted-foreground flex-shrink-0" />
             )}
           </div>
         ))}
