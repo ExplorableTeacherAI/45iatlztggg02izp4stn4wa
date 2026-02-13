@@ -4,6 +4,7 @@ import { IntroductionSection } from "./sections/IntroductionSection";
 import { BetaBernoulliSection } from "./sections/BetaBernoulliSection";
 import { Q1PosteriorSection } from "./sections/Q1PosteriorSection";
 import { Q2SelectionSection } from "./sections/Q2SelectionSection";
+import { Q3ExplorationSection } from "./sections/Q3ExplorationSection";
 
 // Initialize variables from this file's variable definitions
 import { useVariableStore } from "@/stores";
@@ -40,5 +41,10 @@ export const blocks: ReactElement[] = [
     // Section 4: Q2 - Which Design to Select
     <FullWidthLayout key="layout-q2" maxWidth="xl">
         <Q2SelectionSection />
+    </FullWidthLayout>,
+
+    // Section 5: Q3 - Exploration vs Exploitation
+    <FullWidthLayout key="layout-q3" maxWidth="xl">
+        <Q3ExplorationSection />
     </FullWidthLayout>,
 ];
