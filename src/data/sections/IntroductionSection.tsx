@@ -3,24 +3,28 @@ import { EditableH1, EditableH2, EditableParagraph } from "@/components/atoms";
 import { Card, CardContent } from "@/components/atoms/ui/card";
 import { CheckCircle, XCircle } from "lucide-react";
 
+interface IntroductionSectionProps {
+  isPreview?: boolean;
+}
+
 /**
  * Introduction Section - Multi-armed Bandit Lab
  *
  * This section introduces the A/B testing scenario using Thompson Sampling
  * with a Bernoulli likelihood and Beta prior.
  */
-export const IntroductionSection = () => {
+export const IntroductionSection = ({ isPreview }: IntroductionSectionProps) => {
   return (
     <div className="space-y-6">
       {/* Main Title */}
-      <Block id="block-intro-title" padding="lg">
+      <Block id="block-intro-title" padding="lg" isPreview={isPreview}>
         <EditableH1 id="h1-lab-title" blockId="block-intro-title">
           Lab Week 4: Multi-armed Bandit
         </EditableH1>
       </Block>
 
       {/* Introduction Text */}
-      <Block id="block-intro-text" padding="md">
+      <Block id="block-intro-text" padding="md" isPreview={isPreview}>
         <EditableH2 id="h2-introduction" blockId="block-intro-text">
           Introduction
         </EditableH2>
@@ -32,7 +36,7 @@ export const IntroductionSection = () => {
       </Block>
 
       {/* Interface Design Cards */}
-      <Block id="block-interface-designs" padding="md">
+      <Block id="block-interface-designs" padding="md" isPreview={isPreview}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Card className="border-2 border-primary/20 bg-primary/5">
             <CardContent className="pt-6">
@@ -62,7 +66,7 @@ export const IntroductionSection = () => {
       </Block>
 
       {/* Task Description */}
-      <Block id="block-task-description" padding="md">
+      <Block id="block-task-description" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-task" blockId="block-task-description">
           Your task is to formulate this A/B test as a <strong>multi-armed bandit problem</strong> using
           a <strong>Thompson sampling</strong> approach with a <strong>Bernoulli likelihood</strong> and
@@ -71,7 +75,7 @@ export const IntroductionSection = () => {
       </Block>
 
       {/* Mathematical Model */}
-      <Block id="block-model" padding="md">
+      <Block id="block-model" padding="md" isPreview={isPreview}>
         <EditableH2 id="h2-model" blockId="block-model">
           The Statistical Model
         </EditableH2>

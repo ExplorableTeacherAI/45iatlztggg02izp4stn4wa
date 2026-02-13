@@ -186,10 +186,14 @@ const ObservationSequence = ({
   );
 };
 
+interface Q1PosteriorSectionProps {
+  isPreview?: boolean;
+}
+
 /**
  * Section 3: Q1 - Deriving Posterior Distributions
  */
-export const Q1PosteriorSection = () => {
+export const Q1PosteriorSection = ({ isPreview }: Q1PosteriorSectionProps) => {
   const [stepA, setStepA] = useState(5); // Show all observations by default
   const [stepB, setStepB] = useState(5);
 
@@ -205,14 +209,14 @@ export const Q1PosteriorSection = () => {
   return (
     <div className="space-y-6">
       {/* Section Title */}
-      <Block id="block-q1-title" padding="lg">
+      <Block id="block-q1-title" padding="lg" isPreview={isPreview}>
         <EditableH2 id="h2-q1-title" blockId="block-q1-title">
           Q1: Deriving the Posterior Distributions
         </EditableH2>
       </Block>
 
       {/* Question Statement */}
-      <Block id="block-q1-question" padding="md">
+      <Block id="block-q1-question" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-q1-question" blockId="block-q1-question">
           Given the following observations, derive the posterior distributions of \(p_A\) and \(p_B\):
         </EditableParagraph>
@@ -223,7 +227,7 @@ export const Q1PosteriorSection = () => {
       </Block>
 
       {/* Design A Analysis */}
-      <Block id="block-q1-design-a" padding="md">
+      <Block id="block-q1-design-a" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-design-a" blockId="block-q1-design-a">
           Design A Analysis
         </EditableH3>
@@ -254,7 +258,7 @@ export const Q1PosteriorSection = () => {
       </Block>
 
       {/* Design B Analysis */}
-      <Block id="block-q1-design-b" padding="md">
+      <Block id="block-q1-design-b" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-design-b" blockId="block-q1-design-b">
           Design B Analysis
         </EditableH3>
@@ -285,7 +289,7 @@ export const Q1PosteriorSection = () => {
       </Block>
 
       {/* Final Answer */}
-      <Block id="block-q1-answer" padding="md">
+      <Block id="block-q1-answer" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-q1-answer" blockId="block-q1-answer">
           Answer
         </EditableH3>

@@ -179,27 +179,31 @@ const BetaDistributionChart = ({ alpha, beta, color = "#2563eb", label = "" }: {
   );
 };
 
+interface BetaBernoulliSectionProps {
+  isPreview?: boolean;
+}
+
 /**
  * Section 2: The Beta-Bernoulli Model
  *
  * This section explains how the Beta distribution works as a prior
  * and how Bayesian updating works with Bernoulli observations.
  */
-export const BetaBernoulliSection = () => {
+export const BetaBernoulliSection = ({ isPreview }: BetaBernoulliSectionProps) => {
   const alphaDemo = useVar("betaAlphaDemo", 1);
   const betaDemo = useVar("betaBetaDemo", 1);
 
   return (
     <div className="space-y-6">
       {/* Section Title */}
-      <Block id="block-beta-title" padding="lg">
+      <Block id="block-beta-title" padding="lg" isPreview={isPreview}>
         <EditableH2 id="h2-beta-model" blockId="block-beta-title">
           The Beta-Bernoulli Model
         </EditableH2>
       </Block>
 
       {/* Why Beta Distribution */}
-      <Block id="block-beta-why" padding="md">
+      <Block id="block-beta-why" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-beta-why-1" blockId="block-beta-why">
           The <strong>Beta distribution</strong> is the perfect choice for modeling probabilities because:
         </EditableParagraph>
@@ -211,7 +215,7 @@ export const BetaBernoulliSection = () => {
       </Block>
 
       {/* Interactive Beta Distribution */}
-      <Block id="block-beta-interactive" padding="md">
+      <Block id="block-beta-interactive" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-beta-interactive" blockId="block-beta-interactive">
           Try adjusting the parameters below to see how the Beta distribution changes shape.
           Set \(\alpha\) to{" "}
@@ -250,7 +254,7 @@ export const BetaBernoulliSection = () => {
       </Block>
 
       {/* Key Insights */}
-      <Block id="block-beta-insights" padding="md">
+      <Block id="block-beta-insights" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-beta-insights-title" blockId="block-beta-insights" size="lg">
           <strong>Key Observations:</strong>
         </EditableParagraph>
@@ -263,7 +267,7 @@ export const BetaBernoulliSection = () => {
       </Block>
 
       {/* Bayesian Update Rule */}
-      <Block id="block-beta-update" padding="md">
+      <Block id="block-beta-update" padding="md" isPreview={isPreview}>
         <EditableH2 id="h2-update-rule" blockId="block-beta-update">
           The Bayesian Update Rule
         </EditableH2>

@@ -189,10 +189,14 @@ const BetaChartWithSample = ({
   );
 };
 
+interface Q2SelectionSectionProps {
+  isPreview?: boolean;
+}
+
 /**
  * Section 4: Q2 - Which Design to Select
  */
-export const Q2SelectionSection = () => {
+export const Q2SelectionSection = ({ isPreview }: Q2SelectionSectionProps) => {
   const [samples, setSamples] = useState<{ a: number; b: number; winner: 'A' | 'B' }[]>([]);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -243,14 +247,14 @@ export const Q2SelectionSection = () => {
   return (
     <div className="space-y-6">
       {/* Section Title */}
-      <Block id="block-q2-title" padding="lg">
+      <Block id="block-q2-title" padding="lg" isPreview={isPreview}>
         <EditableH2 id="h2-q2-title" blockId="block-q2-title">
           Q2: Which Design Would Be Selected?
         </EditableH2>
       </Block>
 
       {/* Question Statement */}
-      <Block id="block-q2-question" padding="md">
+      <Block id="block-q2-question" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-q2-question" blockId="block-q2-question">
           Based on the posterior distributions you derived, which design would the agent more likely
           select for the next user? Explain your reasoning.
@@ -258,7 +262,7 @@ export const Q2SelectionSection = () => {
       </Block>
 
       {/* Thompson Sampling Explanation */}
-      <Block id="block-q2-thompson" padding="md">
+      <Block id="block-q2-thompson" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-thompson" blockId="block-q2-thompson">
           How Thompson Sampling Works
         </EditableH3>
@@ -273,7 +277,7 @@ export const Q2SelectionSection = () => {
       </Block>
 
       {/* Interactive Simulation */}
-      <Block id="block-q2-simulation" padding="md">
+      <Block id="block-q2-simulation" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-simulation" blockId="block-q2-simulation">
           Interactive Simulation
         </EditableH3>
@@ -389,7 +393,7 @@ export const Q2SelectionSection = () => {
       </Block>
 
       {/* Answer */}
-      <Block id="block-q2-answer" padding="md">
+      <Block id="block-q2-answer" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-q2-answer" blockId="block-q2-answer">
           Answer
         </EditableH3>

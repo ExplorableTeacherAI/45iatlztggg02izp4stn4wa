@@ -167,10 +167,14 @@ const SelectionChart = ({ history, maxUsers }: { history: SimulationState['histo
   );
 };
 
+interface Q3ExplorationSectionProps {
+  isPreview?: boolean;
+}
+
 /**
  * Section 5: Q3 - Exploration vs Exploitation
  */
-export const Q3ExplorationSection = () => {
+export const Q3ExplorationSection = ({ isPreview }: Q3ExplorationSectionProps) => {
   // True success probabilities (unknown to the agent)
   const trueProbA = 0.5;
   const trueProbB = 0.7;
@@ -310,14 +314,14 @@ export const Q3ExplorationSection = () => {
   return (
     <div className="space-y-6">
       {/* Section Title */}
-      <Block id="block-q3-title" padding="lg">
+      <Block id="block-q3-title" padding="lg" isPreview={isPreview}>
         <EditableH2 id="h2-q3-title" blockId="block-q3-title">
           Q3: Exploration vs Exploitation
         </EditableH2>
       </Block>
 
       {/* Question Statement */}
-      <Block id="block-q3-question" padding="md">
+      <Block id="block-q3-question" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-q3-question" blockId="block-q3-question">
           Suppose you need to conduct this A/B test with 1000 users in a sequential manner.
           Explain how Thompson sampling (or bandit algorithms in general) helps balance
@@ -326,7 +330,7 @@ export const Q3ExplorationSection = () => {
       </Block>
 
       {/* Explanation */}
-      <Block id="block-q3-explain" padding="md">
+      <Block id="block-q3-explain" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-tradeoff" blockId="block-q3-explain">
           The Exploration-Exploitation Trade-off
         </EditableH3>
@@ -358,7 +362,7 @@ export const Q3ExplorationSection = () => {
       </Block>
 
       {/* Thompson Sampling Benefits */}
-      <Block id="block-q3-thompson" padding="md">
+      <Block id="block-q3-thompson" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-thompson-benefits" blockId="block-q3-thompson">
           How Thompson Sampling Balances Both
         </EditableH3>
@@ -373,7 +377,7 @@ export const Q3ExplorationSection = () => {
       </Block>
 
       {/* Simulation */}
-      <Block id="block-q3-simulation" padding="md">
+      <Block id="block-q3-simulation" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-simulation" blockId="block-q3-simulation">
           Live Simulation: 1000 Users
         </EditableH3>
@@ -485,7 +489,7 @@ export const Q3ExplorationSection = () => {
       </Block>
 
       {/* Answer */}
-      <Block id="block-q3-answer" padding="md">
+      <Block id="block-q3-answer" padding="md" isPreview={isPreview}>
         <EditableH3 id="h3-q3-answer" blockId="block-q3-answer">
           Answer
         </EditableH3>
