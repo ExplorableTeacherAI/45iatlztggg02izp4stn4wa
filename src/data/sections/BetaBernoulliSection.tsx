@@ -69,9 +69,9 @@ const BetaDistributionChart = ({ alpha, beta, color = "#2563eb", label = "" }: {
     return { points: normalizedPts, maxY };
   }, [alpha, beta]);
 
-  const width = 400;
-  const height = 200;
-  const padding = { top: 20, right: 20, bottom: 40, left: 50 };
+  const width = 500;
+  const height = 280;
+  const padding = { top: 25, right: 25, bottom: 45, left: 55 };
   const chartWidth = width - padding.left - padding.right;
   const chartHeight = height - padding.top - padding.bottom;
 
@@ -86,7 +86,7 @@ const BetaDistributionChart = ({ alpha, beta, color = "#2563eb", label = "" }: {
   const areaD = pathD + ` L ${padding.left + chartWidth} ${padding.top + chartHeight} L ${padding.left} ${padding.top + chartHeight} Z`;
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-md">
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-xl">
       {/* Grid lines */}
       {[0, 0.25, 0.5, 0.75, 1].map(tick => (
         <g key={tick}>
