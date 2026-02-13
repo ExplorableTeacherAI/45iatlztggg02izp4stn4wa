@@ -401,8 +401,18 @@ export const Q2SelectionSection = ({ isPreview }: Q2SelectionSectionProps) => {
           <EditableParagraph id="para-q2-answer" blockId="block-q2-answer">
             <strong>Design B is more likely to be selected.</strong> Here's why:
           </EditableParagraph>
+
+          {/* Expected Value Formula */}
+          <div className="my-4 p-3 bg-white/70 rounded-lg border border-green-100">
+            <div className="text-sm text-muted-foreground mb-2">For a Beta distribution, the expected value is:</div>
+            <div className="text-center text-lg font-mono">
+              \(E[\theta] = \frac{"{\\alpha}"}{"{\\alpha + \\beta}"}\)
+            </div>
+          </div>
+
           <ul className="list-disc list-inside mt-3 space-y-2 text-base leading-relaxed">
-            <li>Design B's posterior \(\text{"{Beta}"}(5, 2)\) has a higher expected value: \(\frac{"{5}"}{"{5+2}"} = 0.714\) vs Design A's \(\frac{"{4}"}{"{4+3}"} = 0.571\)</li>
+            <li>Design A: \(E[\theta_A] = \frac{"{4}"}{"{4+3}"} = \frac{"{4}"}{"{7}"} \approx 0.571\)</li>
+            <li>Design B: \(E[\theta_B] = \frac{"{5}"}{"{5+2}"} = \frac{"{5}"}{"{7}"} \approx 0.714\)</li>
             <li>Design B's distribution is shifted more towards higher probabilities</li>
             <li>When we sample from both posteriors, Design B's samples will tend to be higher more often</li>
             <li>The simulation above demonstrates this — Design B typically wins around 70-75% of the time</li>
