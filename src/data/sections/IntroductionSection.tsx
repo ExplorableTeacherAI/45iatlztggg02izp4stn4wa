@@ -21,11 +21,15 @@ export const IntroductionSection = ({ isPreview }: IntroductionSectionProps) => 
         </EditableH1>
       </Block>
 
-      {/* Introduction Text */}
-      <Block id="block-intro-text" padding="md" isPreview={isPreview}>
-        <EditableH2 id="h2-introduction" blockId="block-intro-text">
+      {/* Introduction Heading */}
+      <Block id="block-intro-heading" padding="md" isPreview={isPreview}>
+        <EditableH2 id="h2-introduction" blockId="block-intro-heading">
           Introduction
         </EditableH2>
+      </Block>
+
+      {/* Introduction Text */}
+      <Block id="block-intro-text" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-intro-1" blockId="block-intro-text">
           You are tasked with conducting a sequential A/B test of two interface designs.
           Users perform a task using one of the interfaces, and we observe an outcome of
