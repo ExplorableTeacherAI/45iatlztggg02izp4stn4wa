@@ -2,6 +2,7 @@ import { type ReactElement } from "react";
 import { FullWidthLayout } from "@/components/layouts";
 import { IntroductionSection } from "./sections/IntroductionSection";
 import { BetaBernoulliSection } from "./sections/BetaBernoulliSection";
+import { Q1PosteriorSection } from "./sections/Q1PosteriorSection";
 
 // Initialize variables from this file's variable definitions
 import { useVariableStore } from "@/stores";
@@ -28,5 +29,10 @@ export const blocks: ReactElement[] = [
     // Section 2: The Beta-Bernoulli Model
     <FullWidthLayout key="layout-beta" maxWidth="xl">
         <BetaBernoulliSection />
+    </FullWidthLayout>,
+
+    // Section 3: Q1 - Deriving Posterior Distributions
+    <FullWidthLayout key="layout-q1" maxWidth="xl">
+        <Q1PosteriorSection />
     </FullWidthLayout>,
 ];
