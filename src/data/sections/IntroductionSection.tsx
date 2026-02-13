@@ -31,12 +31,7 @@ export const IntroductionSection = ({ isPreview }: IntroductionSectionProps) => 
           Users perform a task using one of the interfaces, and we observe an outcome of
           either <strong>Success</strong> or <strong>Failure</strong>.
         </EditableParagraph>
-      </Block>
-
-
-      {/* Task Description */}
-      <Block id="block-task-description" padding="md" isPreview={isPreview}>
-        <EditableParagraph id="para-task" blockId="block-task-description">
+        <EditableParagraph id="para-task" blockId="block-intro-text">
           Your task is to formulate this A/B test as a <strong>multi-armed bandit problem</strong> using
           a <strong>Thompson sampling</strong> approach with a <strong>Bernoulli likelihood</strong> and
           a <strong>Beta prior</strong>.
