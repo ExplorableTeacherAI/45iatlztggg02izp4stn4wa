@@ -70,8 +70,28 @@ export interface VariableDefinition {
  */
 export const variableDefinitions: Record<string, VariableDefinition> = {
     // ========================================
-    // ADD YOUR VARIABLES HERE
+    // MULTI-ARMED BANDIT LAB VARIABLES
     // ========================================
+
+    // Beta Distribution Demo Parameters
+    betaAlphaDemo: {
+        defaultValue: 1,
+        type: 'number',
+        label: 'Alpha (α)',
+        description: 'Alpha parameter for the Beta distribution demo',
+        min: 0.1,
+        max: 20,
+        step: 0.5,
+    },
+    betaBetaDemo: {
+        defaultValue: 1,
+        type: 'number',
+        label: 'Beta (β)',
+        description: 'Beta parameter for the Beta distribution demo',
+        min: 0.1,
+        max: 20,
+        step: 0.5,
+    },
 
     // Uncomment and modify these examples for your lesson:
 
