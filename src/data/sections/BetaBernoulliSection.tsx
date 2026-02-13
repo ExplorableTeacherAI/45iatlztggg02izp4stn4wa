@@ -69,9 +69,9 @@ const BetaDistributionChart = ({ alpha, beta, color = "#2563eb", label = "" }: {
     return { points: normalizedPts, maxY };
   }, [alpha, beta]);
 
-  const width = 500;
-  const height = 280;
-  const padding = { top: 25, right: 25, bottom: 45, left: 55 };
+  const width = 550;
+  const height = 350;
+  const padding = { top: 30, right: 30, bottom: 50, left: 60 };
   const chartWidth = width - padding.left - padding.right;
   const chartHeight = height - padding.top - padding.bottom;
 
@@ -86,7 +86,7 @@ const BetaDistributionChart = ({ alpha, beta, color = "#2563eb", label = "" }: {
   const areaD = pathD + ` L ${padding.left + chartWidth} ${padding.top + chartHeight} L ${padding.left} ${padding.top + chartHeight} Z`;
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-xl">
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full">
       {/* Grid lines */}
       {[0, 0.25, 0.5, 0.75, 1].map(tick => (
         <g key={tick}>
@@ -214,34 +214,43 @@ export const BetaBernoulliSection = ({ isPreview }: BetaBernoulliSectionProps) =
         </ul>
       </Block>
 
-      {/* Interactive Beta Distribution */}
+      {/* Interactive Beta Distribution - Split Layout */}
       <Block id="block-beta-interactive" padding="md" isPreview={isPreview}>
-        <EditableParagraph id="para-beta-interactive" blockId="block-beta-interactive">
-          Try adjusting the parameters below to see how the Beta distribution changes shape.
-          Set \(\alpha\) to{" "}
-          <InlineScrubbleNumber
-            varName="betaAlphaDemo"
-            defaultValue={1}
-            min={0.1}
-            max={20}
-            step={0.5}
-            color="#2563eb"
-            formatValue={(v) => v.toFixed(1)}
-          />{" "}
-          and \(\beta\) to{" "}
-          <InlineScrubbleNumber
-            varName="betaBetaDemo"
-            defaultValue={1}
-            min={0.1}
-            max={20}
-            step={0.5}
-            color="#dc2626"
-            formatValue={(v) => v.toFixed(1)}
-          />
-          :
-        </EditableParagraph>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Left side - Text and controls */}
+          <div className="space-y-4">
+            <EditableParagraph id="para-beta-interactive" blockId="block-beta-interactive">
+              Try adjusting the parameters to see how the Beta distribution changes shape.
+            </EditableParagraph>
+            <EditableParagraph id="para-beta-interactive-2" blockId="block-beta-interactive">
+              Set \(\alpha\) to{" "}
+              <InlineScrubbleNumber
+                varName="betaAlphaDemo"
+                defaultValue={1}
+                min={0.1}
+                max={20}
+                step={0.5}
+                color="#2563eb"
+                formatValue={(v) => v.toFixed(1)}
+              />{" "}
+              and \(\beta\) to{" "}
+              <InlineScrubbleNumber
+                varName="betaBetaDemo"
+                defaultValue={1}
+                min={0.1}
+                max={20}
+                step={0.5}
+                color="#dc2626"
+                formatValue={(v) => v.toFixed(1)}
+              />
+              .
+            </EditableParagraph>
+            <EditableParagraph id="para-beta-interactive-hint" blockId="block-beta-interactive" size="sm">
+              <em>Drag the numbers left or right to change their values and watch the distribution update in real-time.</em>
+            </EditableParagraph>
+          </div>
 
-        <div className="mt-6 flex justify-center">
+          {/* Right side - Visualization */}
           <div className="bg-muted/30 p-6 rounded-lg">
             <BetaDistributionChart
               alpha={alphaDemo}
