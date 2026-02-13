@@ -3,6 +3,7 @@ import { FullWidthLayout } from "@/components/layouts";
 import { IntroductionSection } from "./sections/IntroductionSection";
 import { BetaBernoulliSection } from "./sections/BetaBernoulliSection";
 import { Q1PosteriorSection } from "./sections/Q1PosteriorSection";
+import { Q2SelectionSection } from "./sections/Q2SelectionSection";
 
 // Initialize variables from this file's variable definitions
 import { useVariableStore } from "@/stores";
@@ -34,5 +35,10 @@ export const blocks: ReactElement[] = [
     // Section 3: Q1 - Deriving Posterior Distributions
     <FullWidthLayout key="layout-q1" maxWidth="xl">
         <Q1PosteriorSection />
+    </FullWidthLayout>,
+
+    // Section 4: Q2 - Which Design to Select
+    <FullWidthLayout key="layout-q2" maxWidth="xl">
+        <Q2SelectionSection />
     </FullWidthLayout>,
 ];
