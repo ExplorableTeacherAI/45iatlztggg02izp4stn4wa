@@ -275,11 +275,15 @@ export const BetaBernoulliSection = ({ isPreview }: BetaBernoulliSectionProps) =
         </ul>
       </Block>
 
-      {/* Bayesian Update Rule */}
-      <Block id="block-beta-update" padding="md" isPreview={isPreview}>
-        <EditableH2 id="h2-update-rule" blockId="block-beta-update">
+      {/* Bayesian Update Rule Title */}
+      <Block id="block-beta-update-title" padding="md" isPreview={isPreview}>
+        <EditableH3 id="h3-update-rule" blockId="block-beta-update-title">
           The Bayesian Update Rule
-        </EditableH2>
+        </EditableH3>
+      </Block>
+
+      {/* Bayesian Update Rule Content */}
+      <Block id="block-beta-update" padding="md" isPreview={isPreview}>
         <EditableParagraph id="para-update-intro" blockId="block-beta-update">
           The beauty of the Beta-Bernoulli model is that updating is simple. After observing data, the posterior is:
         </EditableParagraph>
