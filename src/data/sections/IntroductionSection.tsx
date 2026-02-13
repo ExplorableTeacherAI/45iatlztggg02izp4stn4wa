@@ -45,8 +45,7 @@ export const IntroductionSection = ({ isPreview }: IntroductionSectionProps) => 
       {/* Mathematical Model */}
       <Block id="block-model" padding="md" isPreview={isPreview}>
         <EditableH2 id="h2-model" blockId="block-model">
-          
-
+          Mathematical Model
         </EditableH2>
         <EditableParagraph id="para-model-intro" blockId="block-model">
           For each interface design, we model the probability of a successful interaction

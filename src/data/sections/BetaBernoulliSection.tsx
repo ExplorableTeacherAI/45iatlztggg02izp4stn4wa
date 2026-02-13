@@ -1,5 +1,5 @@
 import { Block } from "@/components/templates";
-import { EditableH3, EditableParagraph } from "@/components/atoms";
+import { EditableH2, EditableH3, EditableParagraph } from "@/components/atoms";
 import { InlineScrubbleNumber } from "@/components/atoms/InlineScrubbleNumber";
 import { useVar } from "@/stores";
 import { useMemo } from "react";
