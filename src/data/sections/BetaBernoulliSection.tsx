@@ -1,5 +1,5 @@
 import { Block } from "@/components/templates";
-import { EditableH2, EditableParagraph } from "@/components/atoms";
+import { EditableH3, EditableParagraph } from "@/components/atoms";
 import { InlineScrubbleNumber } from "@/components/atoms/InlineScrubbleNumber";
 import { useVar } from "@/stores";
 import { useMemo } from "react";
@@ -197,9 +197,9 @@ export const BetaBernoulliSection = ({ isPreview }: BetaBernoulliSectionProps) =
     <div className="space-y-6">
       {/* Section Title */}
       <Block id="block-beta-title" padding="lg" isPreview={isPreview}>
-        <EditableH2 id="h2-beta-model" blockId="block-beta-title">
+        <EditableH3 id="h3-beta-model" blockId="block-beta-title">
           The Beta-Bernoulli Model
-        </EditableH2>
+        </EditableH3>
       </Block>
 
       {/* Why Beta Distribution */}
