@@ -42,7 +42,8 @@ export const IntroductionSection = ({ isPreview }: IntroductionSectionProps) => 
         </EditableParagraph>
       </Block>
 
-      {/* Mathematical Model */}
+      {/* 
+ */}
       <Block id="block-model" padding="md" isPreview={isPreview}>
         <EditableH2 id="h2-model" blockId="block-model">
           Mathematical Model
