@@ -226,65 +226,70 @@ export const Q1PosteriorSection = ({ isPreview }: Q1PosteriorSectionProps) => {
         </div>
       </Block>
 
-      {/* Design A Analysis */}
-      <Block id="block-q1-design-a" padding="md" isPreview={isPreview}>
-        <EditableH3 id="h3-design-a" blockId="block-q1-design-a">
-          Design A Analysis
-        </EditableH3>
-        <EditableParagraph id="para-design-a-count" blockId="block-q1-design-a">
-          Counting the observations: <strong>3 Successes</strong> and <strong>2 Failures</strong>
-        </EditableParagraph>
+      {/* Design A & B Analysis - Side by Side */}
+      <Block id="block-q1-designs" padding="md" isPreview={isPreview}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Design A */}
+          <div>
+            <EditableH3 id="h3-design-a" blockId="block-q1-designs">
+              Design A Analysis
+            </EditableH3>
+            <EditableParagraph id="para-design-a-count" blockId="block-q1-designs">
+              Counting the observations: <strong>3 Successes</strong> and <strong>2 Failures</strong>
+            </EditableParagraph>
 
-        <div className="mt-4">
-          <div className="flex items-center gap-4 mb-3">
-            <span className="text-sm text-muted-foreground">Step through observations:</span>
-            <input
-              type="range"
-              min={0}
-              max={5}
-              value={stepA}
-              onChange={(e) => setStepA(Number(e.target.value))}
-              className="w-32"
-            />
-            <span className="text-sm font-mono">{stepA === 0 ? 'Prior' : `Step ${stepA}`}</span>
+            <div className="mt-4">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-sm text-muted-foreground">Step through observations:</span>
+                <input
+                  type="range"
+                  min={0}
+                  max={5}
+                  value={stepA}
+                  onChange={(e) => setStepA(Number(e.target.value))}
+                  className="w-32"
+                />
+                <span className="text-sm font-mono">{stepA === 0 ? 'Prior' : `Step ${stepA}`}</span>
+              </div>
+              <ObservationSequence
+                observations={observationsA}
+                designName="Design A"
+                color="#2563eb"
+                highlightStep={stepA}
+              />
+            </div>
           </div>
-          <ObservationSequence
-            observations={observationsA}
-            designName="Design A"
-            color="#2563eb"
-            highlightStep={stepA}
-          />
-        </div>
-      </Block>
 
-      {/* Design B Analysis */}
-      <Block id="block-q1-design-b" padding="md" isPreview={isPreview}>
-        <EditableH3 id="h3-design-b" blockId="block-q1-design-b">
-          Design B Analysis
-        </EditableH3>
-        <EditableParagraph id="para-design-b-count" blockId="block-q1-design-b">
-          Counting the observations: <strong>4 Successes</strong> and <strong>1 Failure</strong>
-        </EditableParagraph>
+          {/* Design B */}
+          <div>
+            <EditableH3 id="h3-design-b" blockId="block-q1-designs">
+              Design B Analysis
+            </EditableH3>
+            <EditableParagraph id="para-design-b-count" blockId="block-q1-designs">
+              Counting the observations: <strong>4 Successes</strong> and <strong>1 Failure</strong>
+            </EditableParagraph>
 
-        <div className="mt-4">
-          <div className="flex items-center gap-4 mb-3">
-            <span className="text-sm text-muted-foreground">Step through observations:</span>
-            <input
-              type="range"
-              min={0}
-              max={5}
-              value={stepB}
-              onChange={(e) => setStepB(Number(e.target.value))}
-              className="w-32"
-            />
-            <span className="text-sm font-mono">{stepB === 0 ? 'Prior' : `Step ${stepB}`}</span>
+            <div className="mt-4">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-sm text-muted-foreground">Step through observations:</span>
+                <input
+                  type="range"
+                  min={0}
+                  max={5}
+                  value={stepB}
+                  onChange={(e) => setStepB(Number(e.target.value))}
+                  className="w-32"
+                />
+                <span className="text-sm font-mono">{stepB === 0 ? 'Prior' : `Step ${stepB}`}</span>
+              </div>
+              <ObservationSequence
+                observations={observationsB}
+                designName="Design B"
+                color="#16a34a"
+                highlightStep={stepB}
+              />
+            </div>
           </div>
-          <ObservationSequence
-            observations={observationsB}
-            designName="Design B"
-            color="#16a34a"
-            highlightStep={stepB}
-          />
         </div>
       </Block>
 
