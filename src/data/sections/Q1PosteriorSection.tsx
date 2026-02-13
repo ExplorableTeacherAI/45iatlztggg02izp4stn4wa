@@ -298,41 +298,41 @@ export const Q1PosteriorSection = ({ isPreview }: Q1PosteriorSectionProps) => {
         <EditableH3 id="h3-q1-answer" blockId="block-q1-answer">
           Answer
         </EditableH3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <Card className="border-2 border-blue-200 bg-blue-50/50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-lg text-blue-700">Design A Posterior</CardTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+          <Card className="border border-blue-200 bg-blue-50/50">
+            <CardHeader className="pb-1 pt-3 px-3">
+              <CardTitle className="text-sm text-blue-700">Design A Posterior</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-3 pb-3 pt-1">
               <div className="text-center">
-                <div className="text-2xl font-mono font-bold text-blue-600 mb-2">
+                <div className="text-lg font-mono font-bold text-blue-600 mb-1">
                   \(p_A \sim \text{"{Beta}"}(4, 3)\)
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-xs text-muted-foreground">
                   Prior: Beta(1,1) + 3 successes + 2 failures
                 </div>
               </div>
-              <div className="mt-4">
-                <BetaChart alpha={posteriorA.alpha} beta={posteriorA.beta} color="#2563eb" />
+              <div className="mt-2">
+                <BetaChart alpha={posteriorA.alpha} beta={posteriorA.beta} color="#2563eb" height={90} />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-green-200 bg-green-50/50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-lg text-green-700">Design B Posterior</CardTitle>
+          <Card className="border border-green-200 bg-green-50/50">
+            <CardHeader className="pb-1 pt-3 px-3">
+              <CardTitle className="text-sm text-green-700">Design B Posterior</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-3 pb-3 pt-1">
               <div className="text-center">
-                <div className="text-2xl font-mono font-bold text-green-600 mb-2">
+                <div className="text-lg font-mono font-bold text-green-600 mb-1">
                   \(p_B \sim \text{"{Beta}"}(5, 2)\)
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-xs text-muted-foreground">
                   Prior: Beta(1,1) + 4 successes + 1 failure
                 </div>
               </div>
-              <div className="mt-4">
-                <BetaChart alpha={posteriorB.alpha} beta={posteriorB.beta} color="#16a34a" />
+              <div className="mt-2">
+                <BetaChart alpha={posteriorB.alpha} beta={posteriorB.beta} color="#16a34a" height={90} />
               </div>
             </CardContent>
           </Card>
