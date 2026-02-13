@@ -1,7 +1,5 @@
 import { Block } from "@/components/templates";
 import { EditableH1, EditableH2, EditableParagraph } from "@/components/atoms";
-import { Card, CardContent } from "@/components/atoms/ui/card";
-import { CheckCircle, XCircle } from "lucide-react";
 
 interface IntroductionSectionProps {
   isPreview?: boolean;
@@ -35,35 +33,6 @@ export const IntroductionSection = ({ isPreview }: IntroductionSectionProps) => 
         </EditableParagraph>
       </Block>
 
-      {/* Interface Design Cards */}
-      <Block id="block-interface-designs" padding="md" isPreview={isPreview}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card className="border-2 border-primary/20 bg-primary/5">
-            <CardContent className="pt-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-2">Design A</div>
-                <div className="text-muted-foreground">Interface Option 1</div>
-                <div className="mt-4 flex justify-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <XCircle className="h-5 w-5 text-red-500" />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-secondary/20 bg-secondary/5">
-            <CardContent className="pt-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-secondary-foreground mb-2">Design B</div>
-                <div className="text-muted-foreground">Interface Option 2</div>
-                <div className="mt-4 flex justify-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <XCircle className="h-5 w-5 text-red-500" />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </Block>
 
       {/* Task Description */}
       <Block id="block-task-description" padding="md" isPreview={isPreview}>
