@@ -194,8 +194,8 @@ interface Q1PosteriorSectionProps {
  * Section 3: Q1 - Deriving Posterior Distributions
  */
 export const Q1PosteriorSection = ({ isPreview }: Q1PosteriorSectionProps) => {
-  const [stepA, setStepA] = useState(5); // Show all observations by default
-  const [stepB, setStepB] = useState(5);
+  const [stepA, setStepA] = useState(0); // Start from step 0 (prior)
+  const [stepB, setStepB] = useState(0);
 
   // Design A: [Success, Failure, Success, Success, Failure] => 3 successes, 2 failures
   const observationsA = [true, false, true, true, false];
